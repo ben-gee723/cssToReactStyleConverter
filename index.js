@@ -9,9 +9,27 @@ const cssToReactStyleOne = (string) => {
     }
     let split = insertedDivisions.split(" ");
     let newObject = {};
-    newObject[split[0].slice(1)] = split[1].slice(1).slice(0,-1);
+    let secondHalf = split[1].slice(1).slice(0,-2).split(";").join(":").split(":")
 
-    console.log(newObject)
+    //
+    // .map(x => {
+    //     let y = x.split(":");
+    //     newObject[y[0].trim()] = y[1].trim()
+    //     return newObject;
+    // })
+    
+    for(let i = 0; i < secondHalf.length; i+=2){newObject[secondHalf[i]] = secondHalf[i + 1]
+        newObject[secondHalf[i]] = secondHalf[i + 1]
+        if(i % 2 === 0) {
+           
+        } else {
+            
+        }
+    }
+    
+    // newObject[split[0].slice(1)] = secondHalf;
+    console.log(secondHalf)
+    // console.log(newObject)
 }
 
 cssToReactStyleOne(testCss)
