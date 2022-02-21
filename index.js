@@ -19,7 +19,7 @@ const cssToReactStyleOne = (string) => {
     // })
     
     for(let i = 0; i < secondHalf.length; i+=2){newObject[secondHalf[i]] = secondHalf[i + 1]
-        newObject[secondHalf[i]] = secondHalf[i + 1]
+        newObject[secondHalf[i]] = secondHalf[i + 1];
         if(i % 2 === 0) {
            
         } else {
