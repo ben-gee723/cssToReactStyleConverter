@@ -1,6 +1,5 @@
 let testCss1 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
 
-
 const toCamelCase = (string) => {
     // ADD CHECK FOR SYMBOL
     let string1;
