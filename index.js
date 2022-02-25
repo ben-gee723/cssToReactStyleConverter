@@ -1,4 +1,5 @@
-let testCss = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
+let testCss1 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
+
 
 const toCamelCase = (string) => {
     return string.split("-").map((x, i) => i === 0 ? x : x[0].toUpperCase() + x.substring(1)).join("")
@@ -12,7 +13,9 @@ const arrayToObject = (array) => {
     return newObject;
 }
 
-const cssToReactStyleOne = (string) => {
+const convertOneCssToReact = (string) => {
+    if (typeof string !== "String") return "Not a string!"
+
     // remove - unecessary spaces
     let noSpaces = string.replace(/\s/g, '');
 
@@ -37,19 +40,15 @@ const cssToReactStyleOne = (string) => {
     return reactCss;
 }
 
-console.log(convertOneCssToReact(testCss))
+// console.log(convertOneCssToReact(testCss1))
+// console.log(convertOneCssToReact(1))
 
+
+let testCss2 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;},.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;},`;
 
 
 // To think odd and even
 const cssToReactStyleMultiple = (string) => {
-    let noSpaces = string.replace(/\s/g, '');
-    console.log(string)
-    let insertedDivisions = "";
 
-    for (let i = 0; i < noSpaces.length; i++) {
-        noSpaces[i] === "{" ? insertedDivisions = [(noSpaces.slice(0, i) + " " + noSpaces.slice(i))].join('') : "";
-    }
-    let split = insertedDivisions.split(" ")
-    // console.log(split)
 }
+console.log(cssToReactStyleMultiple(testCss2))
