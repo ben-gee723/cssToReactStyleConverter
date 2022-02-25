@@ -67,4 +67,5 @@ const cssToReactStyleMultiple = (string) => {
     })
     return newObject;
 }
+console.log(cssToReactStyleMultiple(testCss1))
 console.log(cssToReactStyleMultiple(testCss2))
