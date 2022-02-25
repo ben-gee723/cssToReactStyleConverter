@@ -2,7 +2,10 @@ let testCss1 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg")
 
 
 const toCamelCase = (string) => {
-    return string.split("-").map((x, i) => i === 0 ? x : x[0].toUpperCase() + x.substring(1)).join("")
+    // ADD CHECK FOR SYMBOL
+    let string1;
+    string[0] === "." ? string1 = string.substring(1) : string1 = string;
+    return string1.split("-").map((x, i) => i === 0 ? x : x[0].toUpperCase() + x.substring(1)).join("")
 };
 
 const arrayToObject = (array) => {
@@ -29,8 +32,9 @@ const convertOneCssToReact = (string) => {
     // deconstruct - main key and main object
     let [firstHalf, secondHalf] = insertedDivisions.split(" ");
 
-    // edit - key
-    let newKey = ""
+    // edit - key CHECK FORMAT!!!
+    // Remove "." --> toCamelCase
+    let newKey = toCamelCase(firstHalf.substring(1))
 
     // create - an array
     let newValue = secondHalf.slice(1).slice(0, -2).split(";").join(":").split(":");
@@ -40,7 +44,7 @@ const convertOneCssToReact = (string) => {
 
     // set - new array in to React CSS object format!
     let reactCss = {};
-    reactCss[firstHalf] = newObject;
+    reactCss[newKey] = newObject;
     return reactCss;
 
     // 2nd Version
@@ -54,8 +58,8 @@ const convertOneCssToReact = (string) => {
 let testCss2 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;},.apples {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
 
 
-// To think odd and even
-const cssToReactStyleMultiple = (string) => {
+// convert multiple CSSs
+const convertMultipleCssToReact = (string) => {
     let newObject = {};
     string.split(",").map(x => {
         // loop through all CSSs
@@ -67,5 +71,5 @@ const cssToReactStyleMultiple = (string) => {
     })
     return newObject;
 }
-console.log(cssToReactStyleMultiple(testCss1))
-console.log(cssToReactStyleMultiple(testCss2))
+console.log("Test 1 String", convertMultipleCssToReact(testCss1))
+console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))
