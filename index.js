@@ -58,9 +58,14 @@ let testCss2 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg")
 
 
 // convert multiple CSSs
-const convertMultipleCssToReact = (string) => {
+// const convertMultipleCssToReact = (string) => {
+
+// Vanilla JS
+const convertMultipleCssToReact = () => {
+    let incomingString = document.getElementById("cssInput").value;
+    console.log(yyincomingString)
     let newObject = {};
-    string.split(",").map(x => {
+    incomingString.split(",").map(x => {
         // loop through all CSSs
         // combine all objects together
         newObject[Object.keys(convertOneCssToReact(x))[0]] = Object.values(convertOneCssToReact(x))[0];
@@ -68,7 +73,8 @@ const convertMultipleCssToReact = (string) => {
         // 2nd Version
         // return newObject[convertOneCssToReact(x)[0]] = convertOneCssToReact(x)[1]
     })
-    return newObject;
+    // return newObject;
+    return document.getElementById("output").innerHTML = newObject;
 }
-console.log("Test 1 String", convertMultipleCssToReact(testCss1))
-console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))
+// console.log("Test 1 String", convertMultipleCssToReact(testCss1))
+// console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))
