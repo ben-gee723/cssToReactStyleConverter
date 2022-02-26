@@ -1,4 +1,5 @@
-# cssToReactStyleConverter
+# COMPLETED PROJECT - cssToReactStyleConverter
+[Try It Out Now](https://ben-gee723.github.io/cssToReactStyleConverter/)
 A small project to see if I can convert a CSS stylesheet to react stylesheet.create format
 
 ## Techstack
@@ -11,10 +12,3 @@ A small project to see if I can convert a CSS stylesheet to react stylesheet.cre
 - Convert Multiple CSS to React Style
 - toCamelCase()
 - arrayToObject()
-
-## Method - convertOneCssToReact
-1. Pass through a string
-2. Remove the spaces of the string
-3. 
-
-## Method convertMultipleCssToReact()
