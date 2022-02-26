@@ -26,12 +26,11 @@ const convertOneCssToReact = (string) => {
     for (let i = 0; i < noSpaces.length; i++) {
         noSpaces[i] === "{" ? insertedDivisions = [(noSpaces.slice(0, i) + " " + noSpaces.slice(i))].join('') : "";
     }
-    // console.log(insertedDivisions.split(" "))
 
     // deconstruct - main key and main object
     let [firstHalf, secondHalf] = insertedDivisions.split(" ");
 
-    // edit - key CHECK FORMAT!!!
+    // edit - key   
     // Remove "." --> toCamelCase
     let newKey = toCamelCase(firstHalf.substring(1))
 
@@ -60,21 +59,32 @@ let testCss2 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg")
 // convert multiple CSSs
 // const convertMultipleCssToReact = (string) => {
 
+
+
+
 // Vanilla JS
 const convertMultipleCssToReact = () => {
-    let incomingString = document.getElementById("cssInput").value;
-    console.log(yyincomingString)
-    let newObject = {};
-    incomingString.split(",").map(x => {
-        // loop through all CSSs
-        // combine all objects together
-        newObject[Object.keys(convertOneCssToReact(x))[0]] = Object.values(convertOneCssToReact(x))[0];
 
-        // 2nd Version
-        // return newObject[convertOneCssToReact(x)[0]] = convertOneCssToReact(x)[1]
-    })
-    // return newObject;
-    return document.getElementById("output").innerHTML = newObject;
+    // Retrieve value from input field
+    let incomingString = document.getElementById("cssInput").value;
+
+    let newObject = {};
+    if (incomingString.includes(",")) {
+        // Multiple CSSs
+        incomingString.split(",").map(x => {
+            // loop through all CSSs
+            // combine all objects together
+            newObject[Object.keys(convertOneCssToReact(x))[0]] = Object.values(convertOneCssToReact(x))[0];
+
+            // 2nd Version
+            // return newObject[convertOneCssToReact(x)[0]] = convertOneCssToReact(x)[1]
+        })
+    } else {
+        // Singular CSSs
+        newObject[Object.keys(convertOneCssToReact(incomingString))[0]] = Object.values(convertOneCssToReact(incomingString))[0];
+    }
+
+    return document.getElementById("output").innerText = JSON.stringify(newObject);
 }
 // console.log("Test 1 String", convertMultipleCssToReact(testCss1))
 // console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))
