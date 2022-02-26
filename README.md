@@ -3,7 +3,7 @@ A small project to see if I can convert a CSS stylesheet to react stylesheet.cre
 
 ## Techstack
  - Frontend: HTML & CSS
- - Environment: Node.js
+ - Environment: Javascript/Node.js
 
 ## Functions Created/Used
 - convertOneCssToReact()
