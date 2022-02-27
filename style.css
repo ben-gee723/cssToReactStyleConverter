@@ -53,6 +53,7 @@ button {
 
 
 pre {
+    display: none;
     padding: .5rem;
     width: 100%;
     border-radius: 10px;
