@@ -6,6 +6,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+div {
+    margin: 0;
+}
+
 :root {
     --primary-color: rgb(94,23,235);
     --secondary-color: #7869FA;
@@ -26,8 +30,10 @@ h1 {
 }
 
 .ipCon {
+    height: 30%;
     padding: 1rem;
-    box-shadow: 0px 3px rgb(211,211,211, .5);
+    box-shadow: 0px 3px rgb(0,0,0, .2);
+    
 }
 
 input{
@@ -39,7 +45,10 @@ button {
 }
 
 .opCon {
-
+    height: 70%;
+    background: linear-gradient( 45deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem;
+    color:white; 
 }
 
 pre {

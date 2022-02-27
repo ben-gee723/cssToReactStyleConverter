@@ -6,9 +6,8 @@ A small project to see if I can convert a CSS stylesheet to react stylesheet.cre
  - Frontend: HTML & CSS
  - Environment: Javascript/Node.js
 
-## Functions Created/Used
+## Functions written/used
 - convertOneCssToReact()
 - convertMultipleCssToReact()
-- Convert Multiple CSS to React Style
 - toCamelCase()
 - arrayToObject()
