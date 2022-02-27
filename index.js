@@ -31,16 +31,17 @@ const convertOneCssToReact = (string) => {
     let [firstHalf, secondHalf] = insertedDivisions.split(" ");
 
     // edit - key   
-    // Remove "." --> toCamelCase
+    // Remove "." --> toCamelCase()
     let newKey = toCamelCase(firstHalf.substring(1))
 
     // create - an array
     let newValue = secondHalf.slice(1).slice(0, -2).split(";").join(":").split(":");
 
-    // convert - array to object
+
+    // convert - arrayToObject()
     let newObject = arrayToObject(newValue);
 
-    // set - new array in to React CSS object format!
+    // set - new array in to React CSS object format
     let reactCss = {};
     reactCss[newKey] = newObject;
     return reactCss;
@@ -84,7 +85,7 @@ const convertMultipleCssToReact = () => {
         newObject[Object.keys(convertOneCssToReact(incomingString))[0]] = Object.values(convertOneCssToReact(incomingString))[0];
     }
 
-    return document.getElementById("output").innerText = JSON.stringify(newObject);
+    return document.getElementById("output").innerText = JSON.stringify(newObject, undefined, 2);
 }
 // console.log("Test 1 String", convertMultipleCssToReact(testCss1))
 // console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))

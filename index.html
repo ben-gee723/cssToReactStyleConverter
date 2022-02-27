@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <main>
+<body class="vh100 vw100">
+    <main class="w-100pc">
         <h1>HTML CSS to REACT CSS Converter</h1>
         <!-- INPUT -->
-        <div class="inputContainer">
-            <input type="text" name="cssInput" id="cssInput">
-            <button type="submit" onclick="convertMultipleCssToReact()">Submit</button>
+        <div class="ipCon container di-grid fl-co ai-ce po-re">
+            <input type="text" name="cssInput" id="cssInput" placeholder="Insert CSS here!y">
+            <button class="w-70pc po-ab" type="submit" onclick="convertMultipleCssToReact()">Submit</button>
         </div>
         <!-- OUTPUT -->
-        <div class="outputContainer">
-            <div id="output"></div>
+        <div class="opCon container w-100pc">
+            <pre id="output" class="w-100pc"></pre>
         </div>
     </main>
     <script src="index.js"></script>
