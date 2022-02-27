@@ -12,7 +12,7 @@ div {
 
 :root {
     --primary-color: rgb(94,23,235);
-    --secondary-color: #7869FA;
+    --secondary-color: rgb(49,196,239);    ;
     --tertiary-color: #FDA93C;
 }
 
@@ -33,7 +33,6 @@ h1 {
     height: 30%;
     padding: 1rem;
     box-shadow: 0px 3px rgb(0,0,0, .2);
-    
 }
 
 input{
@@ -42,6 +41,7 @@ input{
 }
 button {
     bottom: -13px;
+    box-shadow: 3px 3px rgb(0,0,0, .2);
 }
 
 .opCon {
@@ -55,3 +55,12 @@ pre {
     font-size: smaller;
 }
 
+.btnCon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(0,0,0, .2);   
+}
