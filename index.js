@@ -88,3 +88,15 @@ const convertMultipleCssToReact = () => {
 }
 // console.log("Test 1 String", convertMultipleCssToReact(testCss1))
 // console.log("Test 2 Strings", convertMultipleCssToReact(testCss2))
+
+
+// Copy text to clipboard button function
+// copyToClipboard()
+
+const copyToClipboard = () => {
+    let incomingString = document.getElementById("output").innerText;
+    console.log(incomingString)
+    if (incomingString.length === 0) return document.getElementById("output").innerText = 'Please insert CSS';
+    navigator.clipboard.writeText(incomingString);
+    alert("Copied text to clipboard")
+};
