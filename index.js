@@ -1,4 +1,5 @@
-let testCss1 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
+// import { testCss1, testCss2 } from "dummyData.js";
+
 
 const toCamelCase = (string) => {
     // ADD CHECK FOR SYMBOL
@@ -54,9 +55,6 @@ const convertOneCssToReact = (string) => {
 // console.log(convertOneCssToReact(1))
 
 
-let testCss2 = `.bg-main {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;},.apples {width: 100%; background-image: url("./bg-bluehex.jpg");background-position: top;background-repeat: no-repeat;background-size: cover;}`;
-
-
 // convert multiple CSSs
 // const convertMultipleCssToReact = (string) => {
 
@@ -68,6 +66,7 @@ const convertMultipleCssToReact = () => {
 
     // Retrieve value from input field
     let incomingString = document.getElementById("cssInput").value;
+    if (incomingString.length === 0) return document.getElementById("output").innerText = 'Please insert CSS'
 
     let newObject = {};
     if (incomingString.includes(",")) {
