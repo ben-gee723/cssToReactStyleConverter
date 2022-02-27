@@ -56,17 +56,15 @@ const convertOneCssToReact = (string) => {
 
 
 // convert multiple CSSs
-// const convertMultipleCssToReact = (string) => {
-
-
-
-
 // Vanilla JS
 const convertMultipleCssToReact = () => {
 
     // Retrieve value from input field
     let incomingString = document.getElementById("cssInput").value;
-    if (incomingString.length === 0) return document.getElementById("output").innerText = 'Please insert CSS'
+    if (incomingString.length === 0) {
+        document.getElementById("output").style.display = "block"
+        return document.getElementById("output").innerText = 'Please insert CSS'
+    }
 
     let newObject = {};
     if (incomingString.includes(",")) {
@@ -83,7 +81,7 @@ const convertMultipleCssToReact = () => {
         // Singular CSSs
         newObject[Object.keys(convertOneCssToReact(incomingString))[0]] = Object.values(convertOneCssToReact(incomingString))[0];
     }
-
+    document.getElementById("output").style.display = "block"
     return document.getElementById("output").innerText = JSON.stringify(newObject, undefined, 2);
 }
 // console.log("Test 1 String", convertMultipleCssToReact(testCss1))
@@ -94,9 +92,14 @@ const convertMultipleCssToReact = () => {
 // copyToClipboard()
 
 const copyToClipboard = () => {
+    // Retrieve innerText
     let incomingString = document.getElementById("output").innerText;
-    console.log(incomingString)
-    if (incomingString.length === 0) return document.getElementById("output").innerText = 'Please insert CSS';
+
+    // Test for string info
+    if (incomingString.length === 0 || incomingString === "Please insert CSS") return document.getElementById("output").innerText = 'Please insert CSS';
+
+    // output: display --> hidden until clicked
+    // 
     navigator.clipboard.writeText(incomingString);
     alert("Copied text to clipboard")
 };
