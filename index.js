@@ -56,11 +56,6 @@ const convertOneCssToReact = (string) => {
 
 
 // convert multiple CSSs
-// const convertMultipleCssToReact = (string) => {
-
-
-
-
 // Vanilla JS
 const convertMultipleCssToReact = () => {
 
@@ -94,9 +89,11 @@ const convertMultipleCssToReact = () => {
 // copyToClipboard()
 
 const copyToClipboard = () => {
+    // Retrieve innerText
     let incomingString = document.getElementById("output").innerText;
-    console.log(incomingString)
-    if (incomingString.length === 0) return document.getElementById("output").innerText = 'Please insert CSS';
+
+    // Test for string info
+    if (incomingString.length === 0 || incomingString === "Please insert CSS") return document.getElementById("output").innerText = 'Please insert CSS';
     navigator.clipboard.writeText(incomingString);
     alert("Copied text to clipboard")
 };

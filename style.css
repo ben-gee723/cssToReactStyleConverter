@@ -47,12 +47,17 @@ button {
 .opCon {
     height: 70%;
     background: linear-gradient( 45deg, var(--primary-color), var(--secondary-color));
-    padding: 1rem;
+    padding: .5rem;
     color:white; 
 }
 
+
 pre {
+    padding: .5rem;
+    width: 100%;
+    border-radius: 10px;
     font-size: smaller;
+    background:rgb(0,0,0, .1);
 }
 
 .btnCon{
@@ -64,3 +69,5 @@ pre {
     border-radius: 10px;
     box-shadow: 3px 3px rgb(0,0,0, .2);   
 }
+
+/* Media Queries */
